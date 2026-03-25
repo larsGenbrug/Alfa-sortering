@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ALFA Sortering</title>
+    <style>
+        :root { --primary: #003366; --bg: #f4f7f6; }
+        body { font-family: -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        .header { position: sticky; top: 0; background: var(--primary); color: white; padding: 15px; z-index: 100; text-align: center; }
+        .search-container { padding: 10px; background: var(--primary); }
+        .search-box { width: 100%; padding: 15px; border-radius: 12px; border: none; font-size: 18px; box-sizing: border-box; outline: none; }
+        .list { padding: 10px; }
+        .card { background: white; border-radius: 10px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; border-left: 6px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .f-syre { border-left-color: #3498db; }
+        .f-reaktiv { border-left-color: #f39c12; }
+        .f-base { border-left-color: #27ae60; }
+        .f-oplos { border-left-color: #e74c3c; }
+        .f-miljo { border-left-color: #95a5a6; }
+        .info { flex: 1; }
+        .name { font-weight: bold; font-size: 15px; display: block; color: #1a1a1a; }
+        .category { font-size: 11px; color: #666; margin-top: 2px; }
+        .id-tag { background: #eee; padding: 4px 6px; border-radius: 4px; font-weight: bold; font-family: monospace; font-size: 14px; margin-left: 10px; min-width: 50px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="header"><h1 style="margin:0; font-size: 18px;">ALFA Sortering (Komplet)</h1></div>
+<div class="search-container"><input type="text" id="q" class="search-box" placeholder="Søg (Borup, klor, maling)..." onkeyup="runSearch()"></div>
+<div class="list" id="mainList">
+    <div class="card f-syre"><div class="info"><span class="name">Afsyring / Saltsyre / Citronsyre</span><span class="category">Syrer</span></div><div class="id-tag">1.X5</div></div>
+    <div class="card f-base"><div class="info"><span class="name">Afløbsrens / Kaustisk Soda / Soda</span><span class="category">Baser</span></div><div class="id-tag">2.X5</div></div>
+    <div class="card f-oplos"><div class="info"><span class="name">Acetone / Benzin / Sprit / Terpentin</span><span class="category">Opløsningsmidler</span></div><div class="id-tag">7.C1</div></div>
+    <div class="card f-reaktiv"><div class="info"><span class="name">Klor / Quick Klor / Saniklar</span><span class="category">Reaktive stoffer</span></div><div class="id-tag">9.01</div></div>
+    <div class="card f-miljo"><div class="info"><span class="name">Ukrudtsmiddel / Roundup / Myregift</span><span class="category">Bekæmpelsesmidler</span></div><div class="id-tag">11.T2</div></div>
+    <div class="card f-miljo"><div class="info"><span class="name">Frostvæske / Kølervæske / Bremsevæske</span><span class="category">Miljøfarligt</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-maling"><div class="info"><span class="name">Maling / Lak / Træolie / Teakolie</span><span class="category">Maling / Olie</span></div><div class="id-tag">8.H2</div></div>
+    <div class="card f-miljo"><div class="info"><span class="name">Kviksølvtermometer</span><span class="category">Kviksølv</span></div><div class="id-tag">13.K5</div></div>
+    <div class="card f-base"><div class="info"><span class="name">Salmiakspiritus / Brun sæbe</span><span class="category">Baser</span></div><div class="id-tag">2.X5</div></div>
+    <div class="card" style="border-left-color: black;"><div class="info"><span class="name">Brandslukker / Trykflaske</span><span class="category">Diverse</span></div><div class="id-tag">23.Z10</div></div>
+    <div class="card" style="border-left-color: black;"><div class="info"><span class="name">Ukendt kemi / Lab-kemikalier</span><span class="category">Kontakt ALFA</span></div><div class="id-tag">16.Z6</div></div>
+</div>
+<script>
+function runSearch() {
+    let query = document.getElementById('q').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+    for (let card of cards) {
+        card.style.display = card.innerText.toLowerCase().includes(query) ? "flex" : "none";
+    }
+}
+</script>
+</body>
+</html>
