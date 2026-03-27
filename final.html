@@ -3,62 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/png" href="apple-touch-icon.png?v=110">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=110">
+    <link rel="icon" type="image/png" href="apple-touch-icon.png?v=200">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=200">
     <link rel="manifest" href="manifest.json">
-    <title>ALFA TOTAL KEMI A-Z</title>
+    <title>ALFA TOTAL ARKIV</title>
     <style>
         :root { --primary: #003366; --bg: #f4f7f6; }
         body { font-family: -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 0; }
         .header { position: sticky; top: 0; background: var(--primary); color: white; padding: 12px; z-index: 100; text-align: center; border-bottom: 3px solid #f39c12; }
         .search-container { padding: 10px; background: var(--primary); position: sticky; top: 48px; z-index: 99; }
-        .search-box { width: 100%; padding: 12px; border-radius: 10px; border: none; font-size: 16px; box-sizing: border-box; outline: none; }
-        .list { padding: 8px; padding-bottom: 100px; }
-        .card { background: white; border-radius: 8px; padding: 10px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; border-left: 6px solid #ccc; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-        .f-syre { border-left-color: #3498db; }    /* 1.X5 */
-        .f-base { border-left-color: #27ae60; }    /* 2.X5 */
-        .f-oplos { border-left-color: #e74c3c; }   /* 7.C1 */
-        .f-reaktiv { border-left-color: #f39c12; } /* 9.01 */
-        .f-gift { border-left-color: #000000; }    /* 11.T2 / 13.K5 / 16.Z6 */
-        .f-maling { border-left-color: #8e44ad; }  /* 8.H2 */
-        .f-miljo { border-left-color: #95a5a6; }   /* 19.H2 */
-        .info { flex: 1; padding-right: 10px; }
-        .name { font-weight: bold; font-size: 13px; display: block; color: #1a1a1a; line-height: 1.2; }
-        .category { font-size: 9px; color: #666; text-transform: uppercase; margin-top: 2px; }
-        .id-tag { background: #eee; padding: 5px; border-radius: 4px; font-weight: bold; font-family: monospace; font-size: 12px; min-width: 55px; text-align: center; border: 1px solid #ddd; }
+        .search-box { width: 100%; padding: 15px; border-radius: 12px; border: none; font-size: 18px; box-sizing: border-box; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .list { padding: 8px; padding-bottom: 120px; }
+        .card { background: white; border-radius: 8px; padding: 12px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; border-left: 8px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .f-1X5 { border-left-color: #3498db; } /* Blå: Syrer */
+        .f-2X5 { border-left-color: #27ae60; } /* Grøn: Baser */
+        .f-7C1 { border-left-color: #e74c3c; } /* Rød: Opløsningsmidler */
+        .f-901 { border-left-color: #f39c12; } /* Orange: Reaktive */
+        .f-8H2 { border-left-color: #8e44ad; } /* Lilla: Maling */
+        .f-19H2 { border-left-color: #95a5a6; } /* Grå: Miljø/Olie */
+        .f-11T2 { border-left-color: #000000; } /* Sort: Gift/Bekæmpelse */
+        .f-spec { border-left-color: #34495e; } /* Mørkegrå: Special/Tryk */
+        .info { flex: 1; }
+        .name { font-weight: bold; font-size: 14px; display: block; color: #000; line-height: 1.3; }
+        .category { font-size: 10px; color: #666; text-transform: uppercase; margin-top: 2px; }
+        .id-tag { background: #eee; padding: 6px; border-radius: 6px; font-weight: bold; font-family: monospace; font-size: 13px; min-width: 60px; text-align: center; border: 1px solid #ddd; }
     </style>
 </head>
 <body>
-<div class="header"><h1 style="margin:0; font-size: 16px;">ALFA TOTAL KEMI (A-Z)</h1></div>
+<div class="header"><h1 style="margin:0; font-size: 18px;">ALFA TOTAL ARKIV (A-Z)</h1></div>
 <div class="search-container">
-    <input type="text" id="q" class="search-box" placeholder="Søg (Strontium, Stryknin, Rodalon)..." onkeyup="runSearch()">
+    <input type="text" id="q" class="search-box" placeholder="Søg (Stryknin, Strontium, Rodalon)..." onkeyup="runSearch()">
 </div>
 <div class="list" id="mainList">
 
-    <div class="card f-reaktiv"><div class="info"><span class="name">Strontiumchlorid / Strontiumnitrat / Kaliumpermanganat / Klor / HTH</span><span class="category">Reaktive stoffer - 9.01</span></div><div class="id-tag">9.01</div></div>
-    <div class="card f-reaktiv"><div class="info"><span class="name">Bariumchlorid / Bariumnitrat / Sølvnitrat / Chok-Klor / Saniklar</span><span class="category">Reaktive stoffer - 9.01</span></div><div class="id-tag">9.01</div></div>
+    <div class="card f-901"><div class="info"><span class="name">Strontiumchlorid / Strontiumnitrat / Strontium-salt / Bariumnitrat / Bariumchlorid</span><span class="category">Reaktive - 9.01</span></div><div class="id-tag">9.01</div></div>
+    <div class="card f-901"><div class="info"><span class="name">Kaliumpermanganat / Sølvnitrat / Kaliumnitrat / Salpeter / Natriumnitrat</span><span class="category">Reaktive - 9.01</span></div><div class="id-tag">9.01</div></div>
+    <div class="card f-901"><div class="info"><span class="name">Klor / HTH / Saniklar / Divina Klor / Chok-Klor / Chlorilong / Pool-tabs / Brom / Cyanur</span><span class="category">Reaktive - 9.01</span></div><div class="id-tag">9.01</div></div>
 
-    <div class="card f-gift"><div class="info"><span class="name">Stryknin / Rottegift / Musegift / Arsen / Nikotin (rent)</span><span class="category">Giftigt - 11.T2</span></div><div class="id-tag">11.T2</div></div>
-    <div class="card f-gift"><div class="info"><span class="name">Roundup / Myregift / Sneglegift / Ukrudtsmiddel / Biocider</span><span class="category">Bekæmpelse - 11.T2</span></div><div class="id-tag">11.T2</div></div>
-    <div class="card f-gift"><div class="info"><span class="name">Kviksølv / Kviksølvtermometre / Metal-kviksølv</span><span class="category">Kviksølv - 13.K5</span></div><div class="id-tag">13.K5</div></div>
+    <div class="card f-11T2"><div class="info"><span class="name">Stryknin / Arsen / Nikotin (Rent) / Cyanid / Kaliumcyanid / Pikrinsyre / Fosfor</span><span class="category">Gift - 11.T2</span></div><div class="id-tag">11.T2</div></div>
+    <div class="card f-11T2"><div class="info"><span class="name">Rottegift / Musegift / Roundup / Myregift / Sneglegift / Ukrudtsmiddel / Biocider</span><span class="category">Bekæmpelse - 11.T2</span></div><div class="id-tag">11.T2</div></div>
+    <div class="card f-11T2"><div class="info"><span class="name">Antimon / Cadmium / Kvælstof-gødning / NPK / Selvvandingsgødning</span><span class="category">Gift/Gødning - 11.T2</span></div><div class="id-tag">11.T2</div></div>
 
-    <div class="card f-syre"><div class="info"><span class="name">Saltsyre / Svovlsyre / Salpetersyre / Flussyre / Fosforsyre</span><span class="category">Syrer - 1.X5</span></div><div class="id-tag">1.X5</div></div>
-    <div class="card f-syre"><div class="info"><span class="name">Citronsyre / Eddikesyre / Afkalker / PH-Minus / Batterisyre</span><span class="category">Syrer - 1.X5</span></div><div class="id-tag">1.X5</div></div>
+    <div class="card f-1X5"><div class="info"><span class="name">Saltsyre / Svovlsyre / Salpetersyre / Flussyre / Fosforsyre / Akkumulatorsyre</span><span class="category">Syrer - 1.X5</span></div><div class="id-tag">1.X5</div></div>
+    <div class="card f-1X5"><div class="info"><span class="name">Eddikesyre / Citronsyre / Afkalker / PH-Minus / Batterisyre / Fælgrens / Borup Syre</span><span class="category">Syrer - 1.X5</span></div><div class="id-tag">1.X5</div></div>
 
-    <div class="card f-base"><div class="info"><span class="name">Trinatriumfosfat / Kaustisk Soda / Natriumhydroxid / Ammoniak</span><span class="category">Baser - 2.X5</span></div><div class="id-tag">2.X5</div></div>
-    <div class="card f-base"><div class="info"><span class="name">Salmiakspiritus / PH-Plus / Soda / Grundrens / Vandglas</span><span class="category">Baser - 2.X5</span></div><div class="id-tag">2.X5</div></div>
+    <div class="card f-2X5"><div class="info"><span class="name">Trinatriumfosfat / Kaustisk Soda / Natriumhydroxid / Ammoniak / Salmiakspiritus</span><span class="category">Baser - 2.X5</span></div><div class="id-tag">2.X5</div></div>
+    <div class="card f-2X5"><div class="info"><span class="name">PH-Plus / Soda / Grundrens / Vandglas / Skurecreme / Sølvpuds / Ovnrens</span><span class="category">Baser - 2.X5</span></div><div class="id-tag">2.X5</div></div>
 
-    <div class="card f-oplos"><div class="info"><span class="name">Acetone / Cellulosefortynder / Xylol / Xylen / Benzen / Toluol</span><span class="category">Opløsningsmidler - 7.C1</span></div><div class="id-tag">7.C1</div></div>
-    <div class="card f-oplos"><div class="info"><span class="name">Terpentin / Sprit / Petroleum / Tændvæske / Diesel / Benzin</span><span class="category">Opløsningsmidler - 7.C1</span></div><div class="id-tag">7.C1</div></div>
+    <div class="card f-7C1"><div class="info"><span class="name">Acetone / Cellulosefortynder / Xylol / Xylen / Benzen / Toluol / Terpentin / Sprit</span><span class="category">Opløsningsmidler - 7.C1</span></div><div class="id-tag">7.C1</div></div>
+    <div class="card f-7C1"><div class="info"><span class="name">Petroleum / Tændvæske / Diesel / Benzin / Rensebenzin / Vaskebenzin / Bremserens</span><span class="category">Opløsningsmidler - 7.C1</span></div><div class="id-tag">7.C1</div></div>
 
-    <div class="card f-maling"><div class="info"><span class="name">Epoxy / Epoxylim / Harpiks / Maling / Lak / Bejdse / Zinkmaling</span><span class="category">Maling/Lak - 8.H2</span></div><div class="id-tag">8.H2</div></div>
-    <div class="card f-maling"><div class="info"><span class="name">Træbeskyttelse / Tagmaling / Tagpapklæber / Lim / Fugemasse</span><span class="category">Maling/Byg - 8.H2</span></div><div class="id-tag">8.H2</div></div>
+    <div class="card f-8H2"><div class="info"><span class="name">Epoxy / Epoxylim / Harpiks / Dana Lim / Flugger / Faxe / Maling / Lak / Bejdse</span><span class="category">Maling/Lak - 8.H2</span></div><div class="id-tag">8.H2</div></div>
+    <div class="card f-8H2"><div class="info"><span class="name">Zinkmaling / Zink-primer / Tagmaling / Tagpapklæber / Træbeskyttelse / Fugemasse</span><span class="category">Byg - 8.H2</span></div><div class="id-tag">8.H2</div></div>
 
-    <div class="card f-miljo"><div class="info"><span class="name">Rodalon / Klorin / Ajax / Cillit Bang / WC-rens / Vinylrens</span><span class="category">Husholdning - 19.H2</span></div><div class="id-tag">19.H2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">Motorolie / Frostvæske / Kølevæske / Glykol / Bremsevæske</span><span class="category">Miljø - 19.H2</span></div><div class="id-tag">19.H2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">Tagrens / Algefjerner / Flokningsmiddel / SpaCare / Skumdæmper</span><span class="category">Miljø/Pool - 19.H2</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-19H2"><div class="info"><span class="name">Rodalon / Klorin / Ajax / Cillit Bang / WC-rens / Vinylrens / Rodalon Desinfektion</span><span class="category">Husholdning - 19.H2</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-19H2"><div class="info"><span class="name">Motorolie / Frostvæske / Kølevæske / Glykol / Bremsevæske / Hydraulikolie</span><span class="category">Miljø - 19.H2</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-19H2"><div class="info"><span class="name">Tagrens / Algefjerner / Flokningsmiddel / SpaCare / Skumdæmper / Clarifyer</span><span class="category">Miljø/Pool - 19.H2</span></div><div class="id-tag">19.H2</div></div>
 
-    <div class="card f-gift"><div class="info"><span class="name">Spraydåser (Alle typer) / Deodorant / Zinkspray / Lak-spray</span><span class="category">Trykflasker - 23.Z10</span></div><div class="id-tag">23.Z10</div></div>
+    <div class="card f-spec"><div class="info"><span class="name">Spraydåser (Lak, Zink, Deo, Hårspray) / Trykflasker / Campinggas</span><span class="category">Tryk - 23.Z10</span></div><div class="id-tag">23.Z10</div></div>
+    <div class="card f-spec"><div class="info"><span class="name">Hårfarve / Neglelak / Vitaminer / Medicinrester / Kemi-rester</span><span class="category">Kemi - 16.Z6</span></div><div class="id-tag">16.Z6</div></div>
+    <div class="card f-spec"><div class="info"><span class="name">Kviksølv / Kviksølvtermometre / Metal-kviksølv</span><span class="category">Gift - 13.K5</span></div><div class="id-tag">13.K5</div></div>
 </div>
 
 <script>
