@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/png" href="apple-touch-icon.png?v=6">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=6">
+    <link rel="icon" type="image/png" href="apple-touch-icon.png?v=10">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=10">
     <link rel="manifest" href="manifest.json">
     <title>ALFA Master Guide</title>
     <style>
@@ -23,7 +23,7 @@
         .f-maling { border-left-color: #8e44ad; }  /* Lilla: 8.H2 */
         .f-gift { border-left-color: #000000; }    /* Sort: 13.K5 / 16.Z6 / 23.Z10 */
         .info { flex: 1; }
-        .name { font-weight: bold; font-size: 15px; display: block; color: #1a1a1a; line-height: 1.2; }
+        .name { font-weight: bold; font-size: 14px; display: block; color: #1a1a1a; line-height: 1.2; }
         .category { font-size: 10px; color: #666; margin-top: 2px; text-transform: uppercase; }
         .id-tag { background: #eee; padding: 6px 8px; border-radius: 6px; font-weight: bold; font-family: monospace; font-size: 14px; margin-left: 10px; min-width: 65px; text-align: center; border: 1px solid #ddd; }
     </style>
@@ -31,41 +31,27 @@
 <body>
 <div class="header"><h1 style="margin:0; font-size: 18px;">ALFA - MASTER GUIDE</h1></div>
 <div class="search-container">
-    <input type="text" id="q" class="search-box" placeholder="Søg produkt, mærke eller kode..." onkeyup="runSearch()">
+    <input type="text" id="q" class="search-box" placeholder="Søg (Acetone, Benzin, Cillit, Syre)..." onkeyup="runSearch()">
 </div>
 <div class="list" id="mainList">
 
-    <div class="card f-syre"><div class="info"><span class="name">Svovlsyre / Salpetersyre / Batterisyre</span><span class="category">Stærke syrer</span></div><div class="id-tag">1.X5</div></div>
-    <div class="card f-syre"><div class="info"><span class="name">PH-Minus / PH-Down (Activ Pool, Saniklar, Bayrol)</span><span class="category">Pool-syre</span></div><div class="id-tag">1.X5</div></div>
-    <div class="card f-syre"><div class="info"><span class="name">Saltsyre / Eddikesyre / Afkalker / Citronsyre</span><span class="category">Syrer</span></div><div class="id-tag">1.X5</div></div>
+    <div class="card f-oplos"><div class="info"><span class="name">Acetone / Cellulosefortynder / Benzin (Rense/Vaske)</span><span class="category">Opløsningsmidler - 7.C1</span></div><div class="id-tag">7.C1</div></div>
+    <div class="card f-oplos"><div class="info"><span class="name">Bremserens / Campinggas (Små dåser) / Cykelolie</span><span class="category">Opløsningsmidler - 7.C1</span></div><div class="id-tag">7.C1</div></div>
 
-    <div class="card f-base"><div class="info"><span class="name">PH-Plus / PH-Up / Alka Plus (Activ Pool, Saniklar)</span><span class="category">Pool-baser</span></div><div class="id-tag">2.X5</div></div>
-    <div class="card f-base"><div class="info"><span class="name">Salmiakspiritus / Ammoniakvand / Afløbsrens / Ovnrens</span><span class="category">Baser</span></div><div class="id-tag">2.X5</div></div>
-    <div class="card f-base"><div class="info"><span class="name">Kaustisk Soda / Brun Sæbe / Grundrens</span><span class="category">Baser</span></div><div class="id-tag">2.X5</div></div>
+    <div class="card f-syre"><div class="info"><span class="name">Akkumulatorsyre / Afkalker / Citronsyre / Batterisyre</span><span class="category">Syrer - 1.X5</span></div><div class="id-tag">1.X5</div></div>
+    <div class="card f-base"><div class="info"><span class="name">Ammoniak / Afløbsrens / Blegemiddel (Klor-baseret)</span><span class="category">Baser - 2.X5</span></div><div class="id-tag">2.X5</div></div>
 
-    <div class="card f-reaktiv"><div class="info"><span class="name">HTH Klor (Granulat, Shock, Tablet) / Klor-granulat</span><span class="category">Reaktive stoffer</span></div><div class="id-tag">9.01</div></div>
-    <div class="card f-reaktiv"><div class="info"><span class="name">Saniklar Maxi 2000 / Tempo Stick / Day Tabs</span><span class="category">Klor-produkter</span></div><div class="id-tag">9.01</div></div>
-    <div class="card f-reaktiv"><div class="info"><span class="name">Activ Pool Klor (Quick, LongTabs, Multi) / Brom</span><span class="category">Klor-produkter</span></div><div class="id-tag">9.01</div></div>
-    <div class="card f-reaktiv"><div class="info"><span class="name">Chlorilong / Chlorifix / Chok-Klor</span><span class="category">Klor-produkter</span></div><div class="id-tag">9.01</div></div>
+    <div class="card f-miljo"><div class="info"><span class="name">Algefjerner / Autoshampoo / Bilvoks / Bremsevæske</span><span class="category">Miljøfarligt - 19.H2</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-miljo"><div class="info"><span class="name">Cillit Bang / Ajax / Biocider / Bekæmpelsesmidler</span><span class="category">Rengøring/Miljø - 19.H2 / 11.T2</span></div><div class="id-tag">ID-KODE</div></div>
 
-    <div class="card f-miljo"><div class="info"><span class="name">Algefjerner / Pool Protector / Clarifyer / Flokning</span><span class="category">Husholdning/Pool-pleje</span></div><div class="id-tag">19.H2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">SpaCare No Scale / Pipe Cleaner / Filterrens</span><span class="category">Pool-pleje</span></div><div class="id-tag">19.H2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">OxyPool / OxyChock / Aktiv Ilt (Klorfri pleje)</span><span class="category">Pool-pleje</span></div><div class="id-tag">19.H2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">Ajax / Universalrengøring / Glasrens / WC-rens</span><span class="category">Husholdning (m. rester)</span></div><div class="id-tag">19.H2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">Motorolie / Frostvæske / Kølevæske / Glykol</span><span class="category">Miljøfarligt</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-maling"><div class="info"><span class="name">Bejdse / Bundmaling / Cellulose-lak / Maling</span><span class="category">Maling/Lak - 8.H2</span></div><div class="id-tag">8.H2</div></div>
 
-    <div class="card f-miljo"><div class="info"><span class="name">Roundup / Myregift / Sneglegift / Ukrudtsmiddel</span><span class="category">Bekæmpelse</span></div><div class="id-tag">11.T2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">Batterier (Små / Knapceller / Litium)</span><span class="category">Batterier</span></div><div class="id-tag">11.T2</div></div>
+    <div class="card f-reaktiv"><div class="info"><span class="name">Chok-Klor / C-Pool / Cyanursyre / Klor-tabs</span><span class="category">Reaktivt - 9.01</span></div><div class="id-tag">9.01</div></div>
 
-    <div class="card f-oplos"><div class="info"><span class="name">Cellulosefortynder / Acetone / Penselrens</span><span class="category">Opløsningsmidler</span></div><div class="id-tag">7.C1</div></div>
-    <div class="card f-oplos"><div class="info"><span class="name">Terpentin / Sprit / Husholdningssprit</span><span class="category">Opløsningsmidler</span></div><div class="id-tag">7.C1</div></div>
-    <div class="card f-oplos"><div class="info"><span class="name">Rensebenzin / Petroleum / Tændvæske</span><span class="category">Opløsningsmidler</span></div><div class="id-tag">7.C1</div></div>
-
-    <div class="card f-maling"><div class="info"><span class="name">Maling / Lak / Træbeskyttelse / Lim / Fugemasse</span><span class="category">Maling og Lak</span></div><div class="id-tag">8.H2</div></div>
-
-    <div class="card f-gift"><div class="info"><span class="name">Sprayflasker / Trykflasker / Deodorant-spray</span><span class="category">Trykflasker</span></div><div class="id-tag">23.Z10</div></div>
-    <div class="card f-gift"><div class="info"><span class="name">Kviksølvtermometre / Kviksølv / Gift</span><span class="category">Giftigt affald</span></div><div class="id-tag">13.K5</div></div>
-    <div class="card f-gift"><div class="info"><span class="name">Hårfarve / Blegemiddel / Neglelak</span><span class="category">Kemikalieaffald</span></div><div class="id-tag">16.Z6</div></div>
+    <div class="card f-oplos"><div class="info"><span class="name">Sprit / Terpentin / Tændvæske / Xylol / White-spirit</span><span class="category">Opløsningsmidler - 7.C1</span></div><div class="id-tag">7.C1</div></div>
+    <div class="card f-miljo"><div class="info"><span class="name">Tagrens / Ukrudtsmiddel / WC-rens / Vinylrens</span><span class="category">Miljø/Rengøring - 19.H2</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-maling"><div class="info"><span class="name">Træbeskyttelse / Tagmaling / Zink-maling / Lim</span><span class="category">Maling - 8.H2</span></div><div class="id-tag">8.H2</div></div>
+    <div class="card f-gift"><div class="info"><span class="name">Spraydåser (Zink, Lak, Deo) / Trykflasker</span><span class="category">Trykflasker - 23.Z10</span></div><div class="id-tag">23.Z10</div></div>
 </div>
 
 <script>
