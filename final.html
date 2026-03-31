@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <link rel="icon" type="image/png" href="logo.png?v=6">
-    <link rel="shortcut icon" type="image/png" href="logo.png?v=6">
-    <link rel="apple-touch-icon" href="logo.png?v=6">
+    <link rel="icon" type="image/png" href="logo.png?v=7">
+    <link rel="shortcut icon" type="image/png" href="logo.png?v=7">
+    <link rel="apple-touch-icon" href="logo.png?v=7">
     
     <link rel="manifest" href="manifest.json">
     <title>ALFA Master Guide</title>
@@ -19,20 +19,21 @@
         .list { padding: 10px; padding-bottom: 100px; }
         .card { background: white; border-radius: 10px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; border-left: 10px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         
-        /* Farvekoder - Opdelt for klarhed */
-        .f-halogen { border-left-color: #000000; } /* HALOGEN - HELT SORT */
-        .f-gift { border-left-color: #555555; }    /* GIFT - MØRKEGRÅ */
-        .f-reaktiv { border-left-color: #f1c40f; } /* REAKTIV - GUL */
-        .f-base { border-left-color: #27ae60; }    /* BASE - GRØN */
-        .f-syre { border-left-color: #3498db; }    /* SYRE - BLÅ */
-        .f-oplos { border-left-color: #e67e22; }   /* OPLØSNING - ORANGE */
-        .f-maling { border-left-color: #8e44ad; }  /* MALING - LILLA */
-        .f-miljo { border-left-color: #95a5a6; }   /* MILJØ - GRÅ */
+        /* Farvekoder - Navngivet efter jeres fraktioner */
+        .f-halogen { border-left-color: #000000; } /* HALOGEN - Sort */
+        .f-gift { border-left-color: #555555; }    /* BEKÆMPELSESMIDLER - Grå */
+        .f-reaktiv { border-left-color: #f1c40f; } /* REAKTIVE STOFFER - Gul */
+        .f-base { border-left-color: #27ae60; }    /* BASER - Grøn */
+        .f-syre { border-left-color: #3498db; }    /* SYRER - Blå */
+        .f-oplos { border-left-color: #e67e22; }   /* ORG. OPLØSNINGSMIDDEL - Orange */
+        .f-olie { border-left-color: #7e5c42; }    /* SPILDOLIE - Brun */
+        .f-maling { border-left-color: #8e44ad; }  /* MALING/BYG - Lilla */
+        .f-egen { border-left-color: #95a5a6; }    /* EGENBEHANDLING - Lys grå */
 
         .info { flex: 1; padding-right: 10px; }
         .name { font-weight: bold; font-size: 14px; display: block; color: #1a1a1a; line-height: 1.3; }
         .category { font-size: 10px; color: #666; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .id-tag { background: #eee; padding: 8px 4px; border-radius: 6px; font-weight: bold; font-family: monospace; font-size: 13px; min-width: 70px; text-align: center; border: 1px solid #ddd; color: #333; }
+        .id-tag { background: #eee; padding: 8px 4px; border-radius: 6px; font-weight: bold; font-family: sans-serif; font-size: 11px; min-width: 90px; text-align: center; border: 1px solid #ddd; color: #333; line-height: 1.2; }
     </style>
 </head>
 <body>
@@ -42,34 +43,34 @@
 </div>
 
 <div class="search-container">
-    <input type="text" id="q" class="search-box" placeholder="Søg (f.eks. Klorin, Stryknin, Base)..." onkeyup="runSearch()" autofocus>
+    <input type="text" id="q" class="search-box" placeholder="Søg produkt eller kemikalie..." onkeyup="runSearch()" autofocus>
 </div>
 
 <div class="list" id="mainList">
 
-    <div class="card f-halogen"><div class="info"><span class="name">Klorin / Klor-produkter / Halogenholdige stoffer / PVC-rens / Afrenser med klor</span><span class="category">FRAKTION: HALOGEN</span></div><div class="id-tag">HALOGEN</div></div>
-    <div class="card f-halogen"><div class="info"><span class="name">Pool-Klor / HTH / Saniklar / Chok-Klor / Pool-tabs / Tempo Stick / Day Tabs / Brom / Cyanur</span><span class="category">FRAKTION: HALOGEN</span></div><div class="id-tag">HALOGEN</div></div>
+    <div class="card f-halogen"><div class="info"><span class="name">Klorin / Klor-produkter / PVC-rens / Halogenholdige stoffer</span><span class="category">FRAKTION</span></div><div class="id-tag">HALOGEN</div></div>
+    <div class="card f-halogen"><div class="info"><span class="name">Pool-Klor / HTH / Saniklar / Brom / Cyanur</span><span class="category">FRAKTION</span></div><div class="id-tag">HALOGEN</div></div>
 
-    <div class="card f-gift"><div class="info"><span class="name">Stryknin / Arsen / Nikotin (rent) / Cyanid / Kaliumcyanid / Bekæmpelsesmidler</span><span class="category">GIFTIGT - 11.T2</span></div><div class="id-tag">11.T2</div></div>
-    <div class="card f-gift"><div class="info"><span class="name">Roundup / Myregift / Sneglegift / Ukrudtsmiddel / Biocider / Pesticider / Insektgift</span><span class="category">GIFTIGT - 11.T2</span></div><div class="id-tag">11.T2</div></div>
+    <div class="card f-gift"><div class="info"><span class="name">Stryknin / Arsen / Nikotin (rent) / Cyanid / Roundup / Myregift / Ukrudtsmiddel / Bekæmpelsesmiddel</span><span class="category">FRAKTION</span></div><div class="id-tag">BEKÆMPELSES- MIDLER</div></div>
 
-    <div class="card f-reaktiv"><div class="info"><span class="name">Strontiumchlorid / Strontiumnitrat / Bariumnitrat / Bariumchlorid / Kaliumpermanganat / Sølvnitrat</span><span class="category">REAKTIVT - 9.01</span></div><div class="id-tag">9.01</div></div>
+    <div class="card f-reaktiv"><div class="info"><span class="name">Strontiumchlorid / Strontiumnitrat / Bariumnitrat / Bariumchlorid / Kaliumpermanganat / Sølvnitrat</span><span class="category">FRAKTION</span></div><div class="id-tag">REAKTIVE STOFFER</div></div>
 
-    <div class="card f-base"><div class="info"><span class="name">Trinatriumfosfat / Kaustisk Soda / Natriumhydroxid / Ammoniak / Salmiakspiritus / Grundrens</span><span class="category">BASER - 2.X5</span></div><div class="id-tag">2.X5</div></div>
-    <div class="card f-base"><div class="info"><span class="name">PH-Plus / PH-Hæver / Alka-Plus / Vandglas / Soda / Maskinopvask / Natriummetasilikat</span><span class="category">BASER - 2.X5</span></div><div class="id-tag">2.X5</div></div>
+    <div class="card f-base"><div class="info"><span class="name">Trinatriumfosfat / Kaustisk Soda / Natriumhydroxid / Ammoniak / Salmiakspiritus / Grundrens / Soda</span><span class="category">FRAKTION</span></div><div class="id-tag">BASER</div></div>
 
-    <div class="card f-syre"><div class="info"><span class="name">Saltsyre / Svovlsyre / Salpetersyre / Flussyre / Fosforsyre / Akkumulatorsyre / Batterisyre</span><span class="category">SYRER - 1.X5</span></div><div class="id-tag">1.X5</div></div>
-    <div class="card f-syre"><div class="info"><span class="name">Citronsyre / Eddikesyre / Afkalker / PH-Minus / PH-Sænker / Oxalsyre / Myresyre</span><span class="category">SYRER - 1.X5</span></div><div class="id-tag">1.X5</div></div>
+    <div class="card f-syre"><div class="info"><span class="name">Saltsyre / Svovlsyre / Salpetersyre / Flussyre / Fosforsyre / Batterisyre / Afkalker</span><span class="category">FRAKTION</span></div><div class="id-tag">SYRER</div></div>
 
-    <div class="card f-miljo"><div class="info"><span class="name">Rodalon / Desinfektion / Algefjerner / Tagrens / Ajax / Cillit Bang / Vinylrens</span><span class="category">MILJØFARLIGT - 19.H2</span></div><div class="id-tag">19.H2</div></div>
-    <div class="card f-miljo"><div class="info"><span class="name">Motorolie / Frostvæske / Kølevæske / Glykol / Bremsevæske / Skumdæmper / SpaCare</span><span class="category">OLIE/MILJØ - 19.H2</span></div><div class="id-tag">19.H2</div></div>
+    <div class="card f-egen"><div class="info"><span class="name">Rodalon / Desinfektion / Algefjerner / Tagrens / Ajax / Cillit Bang / Vinylrens</span><span class="category">FRAKTION</span></div><div class="id-tag">EGEN- BEHANDLING</div></div>
+    <div class="card f-egen"><div class="info"><span class="name">Frostvæske / Kølevæske / Glykol / Bremsevæske / Skumdæmper / SpaCare</span><span class="category">FRAKTION</span></div><div class="id-tag">EGEN- BEHANDLING</div></div>
 
-    <div class="card f-oplos"><div class="info"><span class="name">Acetone / Cellulosefortynder / Xylol / Xylen / Benzen / Toluol / Sprit / Terpentin</span><span class="category">OPLØSNING - 7.C1</span></div><div class="id-tag">7.C1</div></div>
+    <div class="card f-oplos"><div class="info"><span class="name">Acetone / Cellulosefortynder / Xylol / Xylen / Benzen / Toluol / Sprit / Terpentin / Petroleum</span><span class="category">FRAKTION</span></div><div class="id-tag">ORG. OPLØSN.- MIDDEL</div></div>
 
-    <div class="card f-maling"><div class="info"><span class="name">Zinkmaling / Zink-primer / Epoxy / Epoxylim / Harpiks / Maling / Lak / Træbeskyttelse</span><span class="category">MALING/BYG - 8.H2</span></div><div class="id-tag">8.H2</div></div>
+    <div class="card f-olie"><div class="info"><span class="name">Motorolie / Gearolie / Hydraulikolie / Smøreolie</span><span class="category">FRAKTION</span></div><div class="id-tag">SPILDOLIE</div></div>
 
-    <div class="card f-gift"><div class="info"><span class="name">Kviksølv / Termometre / Barometre</span><span class="category">KVIKSØLV - 13.K5</span></div><div class="id-tag">13.K5</div></div>
-    <div class="card f-gift"><div class="info"><span class="name">Zinkspray / Spraydåser (Alle typer) / Deodorant / Lak-spray / Trykflasker / Gaspatroner</span><span class="category">TRYK - 23.Z10</span></div><div class="id-tag">23.Z10</div></div>
+    <div class="card f-maling"><div class="info"><span class="name">Maling / Lak / Træbeskyttelse / Epoxy / Epoxylim / Harpiks / Fugemasse / Zinkmaling</span><span class="category">FRAKTION</span></div><div class="id-tag">MALING / BYG</div></div>
+
+    <div class="card f-gift"><div class="info"><span class="name">Kviksølv / Termometre / Barometre / Metal-kviksølv</span><span class="category">FRAKTION</span></div><div class="id-tag">KVIKSØLV- HOLDIG</div></div>
+
+    <div class="card f-gift"><div class="info"><span class="name">Zinkspray / Spraydåser (Alle typer) / Deodorant / Lak-spray / Trykflasker / Gaspatroner</span><span class="category">FRAKTION</span></div><div class="id-tag">SPRAY / TRYK</div></div>
 
 </div>
 
